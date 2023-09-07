@@ -1,11 +1,12 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
+import TopTitle from './components/TopTitle/TopTitle'
 
 function App() {
 
   return (
     <>
+    <TopTitle />
       <p>test</p>
     </>
   )
