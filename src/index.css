@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.bullet {
+  @apply mb-2 list-disc ml-4
+}
