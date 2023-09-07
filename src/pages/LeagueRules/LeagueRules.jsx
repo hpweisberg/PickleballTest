@@ -1,11 +1,10 @@
-import { Fragment } from 'react'
-
 import { Disclosure, Transition } from '@headlessui/react'
 import { ChevronUpIcon } from '@heroicons/react/20/solid'
+import { Link } from "react-router-dom";
 
 const LeagueRules = () => {
   return (
-    <div className="w-full px-4 pt-16 ">
+    <div className="w-full px-4 pt-10 ">
       <div className="mx-auto w-full max-w-4xl rounded-2xl bg-white p-2">
         <Disclosure as="div" className="mt-2">
           {({ open }) => (
@@ -48,45 +47,6 @@ const LeagueRules = () => {
                       </li>
                     </ul>
                   </li>
-                  <h3 className='text-lg'>
-                    Skill level & Player Eligibility:
-                  </h3>
-                  <li>
-                    A player cannot play at a skill level two levels above their current level when they registered. For example, a player with a rating of 3.1 at registration can play on a 3.0 and/or 3.5 team but cannot play on a 4.5.
-                  </li>
-                  <li>
-                    Players must be 14 years old or older as of the first day of the season to participate.
-                  </li>
-                  <li>
-                    The 4.5 level teams are allowed to have one player that has a rating higher than 4.5. The 4.5+ level player can have a maximum of a 5.49 rating on DUPR or UPTR.
-                  </li>
-                  <li>
-                    The League is a DUPR partner and DUPR Club, therefore all players will be required to have a DUPR account:
-                    <ul className='bullet'>
-                      <li>
-                        A rating is required to be entered at the time of registration and is locked once the player completes the registration process.
-                      </li>
-                      <li>
-                        If a player does not have a DUPR rating, the team captain is responsible for adequately assessing the player’s rating.
-                      </li>
-                      <li>
-                        If it is found that an unrated player is competing at a skill level that is grossly too high or too low, for fair and competitive play, for all other skill level players in that division, the player will be given the option to move to a new team at the appropriate skill level. If all other teams are full or not willing to add this player, this player will sit out the remainder of the season and/or playoffs.
-                      </li>
-                      <li>
-                        A player’s rating is “locked in” at the time of their registration to a team. League Directors will review player’s skill level when the team roster is approved prior to the start of each season. The league acknowledges that no rating system is perfect and has found that ratings become more reliable when a player has 20 or more matches in DUPR. Therefore captains may request special consideration to roster players at .5 less than their DUPR rating, when a player has fewer than 20 matches in their DUPR history.
-                        <ul className='bullet'>
-                          <li>
-                            Player ratings are locked at the time of registration.
-                          </li>
-                        </ul>
-                      </li>
-                      <li>
-                        A player’s rating is dynamic and changes throughout the season. Some players improve each week, some players struggle with the level of competition, and some players stay even each week during the season. As a result of this fluctuation, ratings are locked at the time of registration to provide a level of equity and fairness for all players in the League. Other factors that impact a player’s rating each week is the player’s partner and opponents. Please be mindful of this throughout the season and be reasonable with your assessment of play and that of others.
-                      </li>
-
-                    </ul>
-                  </li>
-
                 </Disclosure.Panel>
               </Transition>
             </>
@@ -206,35 +166,6 @@ const LeagueRules = () => {
                   <li>
                     Feedback from team captains and players from prior seasons include a concern for constant rescheduling of matches for various reasons. As a result, for the Fall 2023 season teams will adhere to the schedule each week with the primary reason to reschedule only due to weather. If players on your team are unable to commit to playing each week then you should withdraw your team from the League or find players who can commit to playing weekly League matches.
                   </li>
-
-                  <h3 className='text-lg'>Weather Impacts:</h3>
-                  <ul className='bullet'>
-                    <li>
-                      As noted, league matches must be played each week as scheduled. If your team is scheduled to play on Monday at 6:00pm and the weather forecast calls for rain at that time, you cannot reschedule your match prior to your 6:00pm match start time. Forecasting is a prediction based on available data and is or can be wrong at times. Therefore, both teams are required to play the match regardless of the forecast. If at 6:00pm rain begins and makes the courts unplayable, the team captains MUST contact the League and notify them that the match needs to be rescheduled. This match will then be added at the end of the season prior to League playoffs.
-                    </li>
-                    <li>
-                      Using the same example, if your match is scheduled at 6:00pm on Monday and it rains in the morning but clears up in the afternoon, the match should be played and both teams should show up at the courts ready to play. If at the 6:00pm start time its determined that the courts are unplayable due to poor drainage, the match may be rescheduled. However, the teams should make an effort to clear the courts to play the match.
-                    </li>
-                    <li>
-                      Ultimately, prior seasons have shown teams rescheduling matches due to the threat or rain (or high winds) when no rain fell or winds calmed down in the evening resulting in no need to reschedule the match.
-                    </li>
-                  </ul>
-
-                  <li>
-                    The League uses the following guidelines to generate schedules for all teams:
-                    <ul className='bullet'>
-                      <li>
-                        If the home team has access to 3 courts for a match, the games are scheduled concurrently (men’s, women’s mixed) and within one hour for match play (5:00 to 6:00pm). This includes a 10 minute warmup window.
-                      </li>
-                      <li>
-                        If the home team has access to 2 courts for a match, the gender doubles are scheduled concurrently and in a 90 minute block of time (5:00-6:30pm). This includes a 10 minute warmup window.
-                      </li>
-                      <li>
-                        If the home team has access to 1 court for a match, scheduling is planned for 90 minutes including a 10 minute warmup window.
-                      </li>
-                    </ul>
-                  </li>
-
                 </Disclosure.Panel>
               </Transition>
             </>
@@ -370,7 +301,10 @@ const LeagueRules = () => {
                     </ul>
                   </li>
                   <li>
-                    The home team provides new balls for each match (3 match balls). The League ball for outside matches is Franklin X-40. Team captains can purchase these pickleballs @ pickleballcentral.com using promo code “CRASPL” to receive a 5% discount on the purchase. The League will also has a discount with Franklin Sports for a purchase directly through them (current promo code is FORUM20).
+                    The home team provides new balls for each match (3 match balls). The League ball for outside matches is Franklin X-40. Team captains can purchase these pickleballs at {' '}
+                    <a href="https://pickleballcentral.com" target="_blank" rel="noopener noreferrer" className='font-medium text-blue-600 dark:text-blue-500 hover:underline'>
+                      pickleballcentral.com
+                    </a> promo code “CRASPL” to receive a 5% discount on the purchase. The League will also has a discount with Franklin Sports for a purchase directly through them (current promo code is FORUM20).
                   </li>
                   <li>
                     The away team chooses either what side they want or to serve for first game, not both.
