@@ -7,11 +7,11 @@ const LeagueRules = () => {
   return (
     <div className="w-full px-4 pt-16 ">
       <div className="mx-auto w-full max-w-4xl rounded-2xl bg-white p-2">
-        <Disclosure >
+        <Disclosure as="div" className="mt-2">
           {({ open }) => (
             <>
               <Disclosure.Button className="flex w-full justify-between rounded-lg bg-purple-100 px-4 py-2 text-left text-sm font-medium text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">
-                <span>What is your refund policy?</span>
+                <span>Team Structure</span>
                 <ChevronUpIcon
                   className={`${open ? 'rotate-180 transform transition-all' : ''
                     } h-5 w-5 text-purple-500 transition-all`}
@@ -25,9 +25,68 @@ const LeagueRules = () => {
                 leaveFrom="transform scale-100 opacity-100"
                 leaveTo="transform scale-95 opacity-0"
               >
-                <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-500">
-                  If you're unhappy with your purchase for any reason, email us
-                  within 90 days and we'll refund you in full, no questions asked.
+                <Disclosure.Panel as="ul" className="px-4 pt-4 pb-2 text-sm text-gray-500 bullet">
+                  <li>
+                    A team is formed by a team captain who organizes players and registers the team with the League for a skill level (2.5/3.0 etc) and division (location).
+                  </li>
+                  <li>
+                    A team must have a minimum of four players that includes two men and two women.
+                  </li>
+                  <li>
+                    A team cannot have more than *12 players on their roster at any given time during the season.
+                    <ul className='bullet'>
+                      <li>
+                        *Starting Spring 2024 the max will be 10 players.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    Each team must have a minimum of 60% of their registered players on their team qualified for their skill level. For example, a team competing at the 3.5 skill level (with 10 players on the team) must have six players or more with a skill level rating between 3.5 and 3.99. The remaining four players can be rated between 3.0 and 3.49. The 60% requirement is applicable to any roster size between four to ten players per team. The league directors reserve the right to review and make a ruling on teams that are within the 50-59% range.
+                    <ul className='bullet'>
+                      <li>
+                        A player can play up 1⁄2 skill level but cannot play below their skill level. For example a 3.5 (3.5-3.99) player can play at the 4.0 (4.0-4.49) level but cannot play at the 3.0-3.49 level.
+                      </li>
+                    </ul>
+                  </li>
+                  <h3 className='text-lg'>
+                    Skill level & Player Eligibility:
+                  </h3>
+                  <li>
+                    A player cannot play at a skill level two levels above their current level when they registered. For example, a player with a rating of 3.1 at registration can play on a 3.0 and/or 3.5 team but cannot play on a 4.5.
+                  </li>
+                  <li>
+                    Players must be 14 years old or older as of the first day of the season to participate.
+                  </li>
+                  <li>
+                    The 4.5 level teams are allowed to have one player that has a rating higher than 4.5. The 4.5+ level player can have a maximum of a 5.49 rating on DUPR or UPTR.
+                  </li>
+                  <li>
+                    The League is a DUPR partner and DUPR Club, therefore all players will be required to have a DUPR account:
+                    <ul className='bullet'>
+                      <li>
+                        A rating is required to be entered at the time of registration and is locked once the player completes the registration process.
+                      </li>
+                      <li>
+                        If a player does not have a DUPR rating, the team captain is responsible for adequately assessing the player’s rating.
+                      </li>
+                      <li>
+                        If it is found that an unrated player is competing at a skill level that is grossly too high or too low, for fair and competitive play, for all other skill level players in that division, the player will be given the option to move to a new team at the appropriate skill level. If all other teams are full or not willing to add this player, this player will sit out the remainder of the season and/or playoffs.
+                      </li>
+                      <li>
+                        A player’s rating is “locked in” at the time of their registration to a team. League Directors will review player’s skill level when the team roster is approved prior to the start of each season. The league acknowledges that no rating system is perfect and has found that ratings become more reliable when a player has 20 or more matches in DUPR. Therefore captains may request special consideration to roster players at .5 less than their DUPR rating, when a player has fewer than 20 matches in their DUPR history.
+                        <ul className='bullet'>
+                          <li>
+                            Player ratings are locked at the time of registration.
+                          </li>
+                        </ul>
+                      </li>
+                      <li>
+                        A player’s rating is dynamic and changes throughout the season. Some players improve each week, some players struggle with the level of competition, and some players stay even each week during the season. As a result of this fluctuation, ratings are locked at the time of registration to provide a level of equity and fairness for all players in the League. Other factors that impact a player’s rating each week is the player’s partner and opponents. Please be mindful of this throughout the season and be reasonable with your assessment of play and that of others.
+                      </li>
+
+                    </ul>
+                  </li>
+
                 </Disclosure.Panel>
               </Transition>
             </>
@@ -37,15 +96,195 @@ const LeagueRules = () => {
           {({ open }) => (
             <>
               <Disclosure.Button className="flex w-full justify-between rounded-lg bg-purple-100 px-4 py-2 text-left text-sm font-medium text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">
-                <span>Do you offer technical support?</span>
+                <span>Skill level & Player Eligibility</span>
                 <ChevronUpIcon
-                  className={`${open ? 'rotate-180 transform' : ''
-                    } h-5 w-5 text-purple-500`}
+                  className={`${open ? 'rotate-180 transform transition-all' : ''
+                    } h-5 w-5 text-purple-500 transition-all`}
                 />
               </Disclosure.Button>
-              <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-500">
-                No.
-              </Disclosure.Panel>
+              <Transition
+                enter="transition duration-100 ease-out"
+                enterFrom="transform scale-95 opacity-0"
+                enterTo="transform scale-100 opacity-100"
+                leave="transition duration-75 ease-out"
+                leaveFrom="transform scale-100 opacity-100"
+                leaveTo="transform scale-95 opacity-0"
+              >
+                <Disclosure.Panel as="ul" className="px-4 pt-4 pb-2 text-sm text-gray-500 bullet">
+                  <li>
+                    A player cannot play at a skill level two levels above their current level when they registered. For example, a player with a rating of 3.1 at registration can play on a 3.0 and/or 3.5 team but cannot play on a 4.5.
+                  </li>
+                  <li>
+                    Players must be 14 years old or older as of the first day of the season to participate.
+                  </li>
+                  <li>
+                    The 4.5 level teams are allowed to have one player that has a rating higher than 4.5. The 4.5+ level player can have a maximum of a 5.49 rating on DUPR or UPTR.
+                  </li>
+                  <li>
+                    The League is a DUPR partner and DUPR Club, therefore all players will be required to have a DUPR account:
+                    <ul className='bullet'>
+                      <li>
+                        A rating is required to be entered at the time of registration and is locked once the player completes the registration process.
+                      </li>
+                      <li>
+                        If a player does not have a DUPR rating, the team captain is responsible for adequately assessing the player’s rating.
+                      </li>
+                      <li>
+                        If it is found that an unrated player is competing at a skill level that is grossly too high or too low, for fair and competitive play, for all other skill level players in that division, the player will be given the option to move to a new team at the appropriate skill level. If all other teams are full or not willing to add this player, this player will sit out the remainder of the season and/or playoffs.
+                      </li>
+                      <li>
+                        A player’s rating is “locked in” at the time of their registration to a team. League Directors will review player’s skill level when the team roster is approved prior to the start of each season. The league acknowledges that no rating system is perfect and has found that ratings become more reliable when a player has 20 or more matches in DUPR. Therefore captains may request special consideration to roster players at .5 less than their DUPR rating, when a player has fewer than 20 matches in their DUPR history.
+                        <ul className='bullet'>
+                          <li>
+                            Player ratings are locked at the time of registration.
+                          </li>
+                        </ul>
+                      </li>
+                      <li>
+                        A player’s rating is dynamic and changes throughout the season. Some players improve each week, some players struggle with the level of competition, and some players stay even each week during the season. As a result of this fluctuation, ratings are locked at the time of registration to provide a level of equity and fairness for all players in the League. Other factors that impact a player’s rating each week is the player’s partner and opponents. Please be mindful of this throughout the season and be reasonable with your assessment of play and that of others.
+                      </li>
+
+                    </ul>
+                  </li>
+
+                </Disclosure.Panel>
+              </Transition>
+            </>
+          )}
+        </Disclosure>
+        <Disclosure as="div" className="mt-2">
+          {({ open }) => (
+            <>
+              <Disclosure.Button className="flex w-full justify-between rounded-lg bg-purple-100 px-4 py-2 text-left text-sm font-medium text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">
+                <span>Schedule</span>
+                <ChevronUpIcon
+                  className={`${open ? 'rotate-180 transform transition-all' : ''
+                    } h-5 w-5 text-purple-500 transition-all`}
+                />
+              </Disclosure.Button>
+              <Transition
+                enter="transition duration-100 ease-out"
+                enterFrom="transform scale-95 opacity-0"
+                enterTo="transform scale-100 opacity-100"
+                leave="transition duration-75 ease-out"
+                leaveFrom="transform scale-100 opacity-100"
+                leaveTo="transform scale-95 opacity-0"
+              >
+                <Disclosure.Panel as="ul" className="px-4 pt-4 pb-2 text-sm text-gray-500 bullet">
+                  <li>
+                    The intent before every season is to have the schedule available two weeks or less before the start of the season.
+                  </li>
+                  <li>
+                    The schedule is predicated on the number of teams within a skill level and division (location). The League cannot guarantee teams at a skill level or division each season.
+                  </li>
+                  <li>
+                    A minimum of four teams is required at a skill level within a location to establish a division and create a schedule for that division. For example, four teams sign up at the 3.5 skill level in the South Jersey division. These four teams now makeup the 3.5 South Jersey division and the League will create a schedule for these teams to complete a minimum of 6 MATCHES for the season.
+                  </li>
+                  <li>
+                    A team at any skill level will not be included in the schedule if they do not have the minimum number of players registered to its team (two men and two women) prior to the schedule being prepared.
+                  </li>
+                  <li>
+                    The schedule will generally include an equal number of home and away matches for a team within a skill level and division. The final schedule is determined by courts available, location, and teams.
+                  </li>
+                  <li>
+                    A division cannot have more than six teams. Any division that exceeds six teams will be split into two divisions and scheduled accordingly.
+                  </li>
+                  <li>
+                    Each season (fall/spring) is comprised of eight to ten weeks of competition. A final week will be used for rescheduled matches due to weather and then state playoffs.
+                  </li>
+                  <li>
+                    Teams are required to play their scheduled match on the assigned day and time each week. Teams are not permitted to reschedule their match each week unless:
+                    <ul className='bullet'>
+                      <li>
+                        The courts are unplayable due to prior or ongoing rain.
+                      </li>
+                      <li>
+                        The courts are unavailable beyond control of the teams (such as closed for construction by the township).
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    Feedback from team captains and players from prior seasons include a concern for constant rescheduling of matches for various reasons. As a result, for the Fall 2023 season teams will adhere to the schedule each week with the primary reason to reschedule only due to weather. If players on your team are unable to commit to playing each week then you should withdraw your team from the League or find players who can commit to playing weekly League matches.
+                  </li>
+
+                  <h3 className='text-lg'>Weather Impacts:</h3>
+                  <ul className='bullet'>
+                    <li>
+                      As noted, league matches must be played each week as scheduled. If your team is scheduled to play on Monday at 6:00pm and the weather forecast calls for rain at that time, you cannot reschedule your match prior to your 6:00pm match start time. Forecasting is a prediction based on available data and is or can be wrong at times. Therefore, both teams are required to play the match regardless of the forecast. If at 6:00pm rain begins and makes the courts unplayable, the team captains MUST contact the League and notify them that the match needs to be rescheduled. This match will then be added at the end of the season prior to League playoffs.
+                    </li>
+                    <li>
+                      Using the same example, if your match is scheduled at 6:00pm on Monday and it rains in the morning but clears up in the afternoon, the match should be played and both teams should show up at the courts ready to play. If at the 6:00pm start time its determined that the courts are unplayable due to poor drainage, the match may be rescheduled. However, the teams should make an effort to clear the courts to play the match.
+                    </li>
+                    <li>
+                      Ultimately, prior seasons have shown teams rescheduling matches due to the threat or rain (or high winds) when no rain fell or winds calmed down in the evening resulting in no need to reschedule the match.
+                    </li>
+                  </ul>
+
+                  <li>
+                    The League uses the following guidelines to generate schedules for all teams:
+                    <ul className='bullet'>
+                      <li>
+                        If the home team has access to 3 courts for a match, the games are scheduled concurrently (men’s, women’s mixed) and within one hour for match play (5:00 to 6:00pm). This includes a 10 minute warmup window.
+                      </li>
+                      <li>
+                        If the home team has access to 2 courts for a match, the gender doubles are scheduled concurrently and in a 90 minute block of time (5:00-6:30pm). This includes a 10 minute warmup window.
+                      </li>
+                      <li>
+                        If the home team has access to 1 court for a match, scheduling is planned for 90 minutes including a 10 minute warmup window.
+                      </li>
+                    </ul>
+                  </li>
+
+                </Disclosure.Panel>
+              </Transition>
+            </>
+          )}
+        </Disclosure>
+        <Disclosure as="div" className="mt-2">
+          {({ open }) => (
+            <>
+              <Disclosure.Button className="flex w-full justify-between rounded-lg bg-purple-100 px-4 py-2 text-left text-sm font-medium text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">
+                <span>Weather Impacts</span>
+                <ChevronUpIcon
+                  className={`${open ? 'rotate-180 transform transition-all' : ''
+                    } h-5 w-5 text-purple-500 transition-all`}
+                />
+              </Disclosure.Button>
+              <Transition
+                enter="transition duration-100 ease-out"
+                enterFrom="transform scale-95 opacity-0"
+                enterTo="transform scale-100 opacity-100"
+                leave="transition duration-75 ease-out"
+                leaveFrom="transform scale-100 opacity-100"
+                leaveTo="transform scale-95 opacity-0"
+              >
+                <Disclosure.Panel as="ul" className="px-4 pt-4 pb-2 text-sm text-gray-500 bullet">
+                  <li>
+                    As noted, league matches must be played each week as scheduled. If your team is scheduled to play on Monday at 6:00pm and the weather forecast calls for rain at that time, you cannot reschedule your match prior to your 6:00pm match start time. Forecasting is a prediction based on available data and is or can be wrong at times. Therefore, both teams are required to play the match regardless of the forecast. If at 6:00pm rain begins and makes the courts unplayable, the team captains MUST contact the League and notify them that the match needs to be rescheduled. This match will then be added at the end of the season prior to League playoffs.
+                  </li>
+                  <li>
+                    Using the same example, if your match is scheduled at 6:00pm on Monday and it rains in the morning but clears up in the afternoon, the match should be played and both teams should show up at the courts ready to play. If at the 6:00pm start time its determined that the courts are unplayable due to poor drainage, the match may be rescheduled. However, the teams should make an effort to clear the courts to play the match.
+                  </li>
+                  <li>
+                    Ultimately, prior seasons have shown teams rescheduling matches due to the threat or rain (or high winds) when no rain fell or winds calmed down in the evening resulting in no need to reschedule the match.
+                  </li>
+                  <li>
+                    The League uses the following guidelines to generate schedules for all teams:
+                    <ul className='bullet'>
+                      <li>
+                        If the home team has access to 3 courts for a match, the games are scheduled concurrently (men’s, women’s mixed) and within one hour for match play (5:00 to 6:00pm). This includes a 10 minute warmup window.
+                      </li>
+                      <li>
+                        If the home team has access to 2 courts for a match, the gender doubles are scheduled concurrently and in a 90 minute block of time (5:00-6:30pm). This includes a 10 minute warmup window.
+                      </li>
+                      <li>
+                        If the home team has access to 1 court for a match, scheduling is planned for 90 minutes including a 10 minute warmup window.
+                      </li>
+                    </ul>
+                  </li>
+
+                </Disclosure.Panel>
+              </Transition>
             </>
           )}
         </Disclosure>
@@ -68,7 +307,8 @@ const LeagueRules = () => {
                 leaveTo="transform scale-95 opacity-0"
               >
                 <Disclosure.Panel as="ul" className="px-4 pt-4 pb-2 text-sm text-gray-500 bullet">
-                  <li>Each team needs to provide 3 home courts. Exceptions can be made if court availability at home site is limited, in which case, courts can be played in sequence. However, the effort should be made to keep this option to a minimum.
+                  <li>
+                    Each team needs to provide 3 home courts. Exceptions can be made if court availability at home site is limited, in which case, courts can be played in sequence. However, the effort should be made to keep this option to a minimum.
                     <ul className='bullet'>
                       <li>
                         The schedule is based on a team’s number of courts, days of the week, and skill level. For example, team A plays in the 2.5 division with a home court that has six courts. Team B plays in the 4.0 division with the same home court. It’s possible to schedule the 2.5 and 4.0 team on the same night and using all six courts at the same time (5:00pm match time for both 2.5 and 4.0 teams). However if this is a public court that has restrictions, both 2.5 and 4.0 matches can be scheduled at the 5:00pm time slot but each team would then only get two courts. In this scenario, gender doubles is played first followed by mixed doubles.
@@ -112,7 +352,8 @@ const LeagueRules = () => {
                 leaveTo="transform scale-95 opacity-0"
               >
                 <Disclosure.Panel as="ul" className="px-4 pt-4 pb-2 text-sm text-gray-500 bullet">
-                  <li>Each Match will have 3 courts of play, Men’s Doubles, Women’s Doubles and Mixed Doubles.
+                  <li>
+                    Each Match will have 3 courts of play, Men’s Doubles, Women’s Doubles and Mixed Doubles.
                   </li>
                   <li>
                     Each court will play the best of 3 games with games played to 11 points win by 2.
@@ -208,7 +449,8 @@ const LeagueRules = () => {
                 leaveTo="transform scale-95 opacity-0"
               >
                 <Disclosure.Panel as="ul" className="px-4 pt-4 pb-2 text-sm text-gray-500 bullet">
-                  <li>Matches scheduled are required to be played on the date as scheduled. Teams may move the start time to earlier or later if both team captains agree and it does not jeopardize the lineups for each team. Attempting to play the match earlier or later due to potential weather is a valid request however the match start time cannot be changed if both teams cannot field a full team for the match. Reasons to reschedule a match are:
+                  <li>
+                    Matches scheduled are required to be played on the date as scheduled. Teams may move the start time to earlier or later if both team captains agree and it does not jeopardize the lineups for each team. Attempting to play the match earlier or later due to potential weather is a valid request however the match start time cannot be changed if both teams cannot field a full team for the match. Reasons to reschedule a match are:
                   </li>
                   <ul className="bullet">
                     <li>
@@ -263,14 +505,18 @@ const LeagueRules = () => {
                 leaveTo="transform scale-95 opacity-0"
               >
                 <Disclosure.Panel as="ul" className="px-4 pt-4 pb-2 text-sm text-gray-500">
-                  <li className='bullet'>The League takes considerable care, time, and input from team captains to ensure that the schedule is accurate and accommodating to every team in the league each season. In addition, as a League, it is expected that players on each team understand the dedication and time requirement needed to complete matches each week. While we want everyone to play in the League, to ensure equity and fair play, players should understand that the schedule matters and teams should play their match each week and not reschedule each week’s matches. In an effort to ensure equity and fair play and team captain feedback, the League has detailed the rules around forfeiting a match.
+                  <li className='bullet'>
+                    The League takes considerable care, time, and input from team captains to ensure that the schedule is accurate and accommodating to every team in the league each season. In addition, as a League, it is expected that players on each team understand the dedication and time requirement needed to complete matches each week. While we want everyone to play in the League, to ensure equity and fair play, players should understand that the schedule matters and teams should play their match each week and not reschedule each week’s matches. In an effort to ensure equity and fair play and team captain feedback, the League has detailed the rules around forfeiting a match.
 
                   </li>
-                  <li className='bullet'>A team that is unable to play a match when it was scheduled or rescheduled will lose by forfeit (see Match Guidelines and Reschedule Guidelines).
+                  <li className='bullet'>
+                    A team that is unable to play a match when it was scheduled or rescheduled will lose by forfeit (see Match Guidelines and Reschedule Guidelines).
 
                   </li>
-                  <li className='bullet'>If a team wins by forfeit, the team is awarded 3 Courts. Each court will be recorded as 2 games - 0 games with a score of 11-0. If any courts can be played, they should be played, even if it is only a partial match.</li>
-                  <li className='bullet'>If any courts are forfeited, in a partially played match, score will be recorded as 2-0, 11- 0,11-0 for team that was able to play the court that was forfeited.
+                  <li className='bullet'>
+                    If a team wins by forfeit, the team is awarded 3 Courts. Each court will be recorded as 2 games - 0 games with a score of 11-0. If any courts can be played, they should be played, even if it is only a partial match.</li>
+                  <li className='bullet'>
+                    If any courts are forfeited, in a partially played match, score will be recorded as 2-0, 11- 0,11-0 for team that was able to play the court that was forfeited.
                   </li>
                 </Disclosure.Panel>
               </Transition>
@@ -296,13 +542,16 @@ const LeagueRules = () => {
                 leaveTo="transform scale-95 opacity-0"
               >
                 <Disclosure.Panel as="ul" className="px-4 pt-4 pb-2 text-sm text-gray-500 bullet">
-                  <li>After the scheduled season is complete, state playoffs will be held in a central location in NJ or out of state.
+                  <li>
+                    After the scheduled season is complete, state playoffs will be held in a central location in NJ or out of state.
 
                   </li>
-                  <li>The winning team from each division / level qualifies for playoffs.
+                  <li>
+                    The winning team from each division / level qualifies for playoffs.
 
                   </li>
-                  <li>The division winner is determined by the following criteria:
+                  <li>
+                    The division winner is determined by the following criteria:
                     <ol className="list-decimal ml-6">
                       <li>
                         Most Matches Won (wins on the season).
@@ -321,7 +570,8 @@ const LeagueRules = () => {
                       </li>
                     </ol>
                   </li>
-                  <li className='bullet'>The playoff format will be communicated to division winners as soon as possible towards the end of the regular season. Potential formats includes:
+                  <li className='bullet'>
+                    The playoff format will be communicated to division winners as soon as possible towards the end of the regular season. Potential formats includes:
                     <ol className="list-decimal ml-6">
                       <li>
                         Round robin
