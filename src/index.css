@@ -5,3 +5,8 @@
 .bullet {
   @apply mb-2 list-disc ml-4
 }
+
+.nav-item {
+  @apply w-[250px] h-10 flex justify-start items-center pl-6 bg-slate-100 m-2 rounded-md cursor-pointer hover:bg-slate-300 
+}
+
