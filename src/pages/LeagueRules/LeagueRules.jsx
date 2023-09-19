@@ -1,10 +1,9 @@
-import { Disclosure, Transition } from '@headlessui/react'
-import { ChevronUpIcon } from '@heroicons/react/20/solid'
-import { Link } from "react-router-dom";
+import { Disclosure, Transition } from '@headlessui/react';
+import { ChevronUpIcon } from '@heroicons/react/20/solid';
 
 const LeagueRules = () => {
   return (
-    <div className="w-full px-4 pt-10 ">
+    <div className="w-full px-4 pt-10 z-0">
       <div className="mx-auto w-full max-w-4xl rounded-2xl bg-white p-2">
         <Disclosure as="div" className="mt-2">
           {({ open }) => (

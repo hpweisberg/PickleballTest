@@ -10,3 +10,28 @@
   @apply w-[250px] h-10 flex justify-start items-center pl-6 bg-slate-100 m-2 rounded-md cursor-pointer hover:bg-slate-300 
 }
 
+/* CSS for sliding animation */
+.nav.open {
+  transform: translateX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.nav-items.open {
+  transform: translateX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.nav {
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.nav-items {
+  transform: translateX(-80%);
+  transition: transform 0.3s ease-in-out;
+
+}
+
+ul {
+  @apply z-0;
+}

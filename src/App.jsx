@@ -6,13 +6,21 @@ import LeagueRules from './pages/LeagueRules/LeagueRules'
 
 function App() {
 
+  const [showNav, setShowNav] = useState(false);
+
+  const handleShowNav = () => {
+    console.log('test')
+    setShowNav(!showNav);
+  }
+
+
   return (
     <>
       <div className='flex'>
-        <Navbar />
+        <Navbar handleShowNav={handleShowNav} showNav={showNav} />
         <section className='w-full'>
 
-          <TopTitle />
+          <TopTitle handleShowNav={handleShowNav} showNav={showNav} />
           <div >
             <LeagueRules />
           </div>
