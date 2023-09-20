@@ -36,3 +36,7 @@
 ul {
   @apply z-0;
 }
+
+.last-item {
+  @apply mb-20
+}

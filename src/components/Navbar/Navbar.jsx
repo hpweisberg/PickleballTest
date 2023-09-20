@@ -49,7 +49,7 @@ const Navbar = ({ handleShowNav, showNav }) => {
           <ul className='flex flex-col'>
             {navItems.map((item, index) => (
               <a href={item.link} key={index} target="_blank" rel="noopener noreferrer">
-                <li className='nav-item'>
+      <li className={`nav-item ${index === navItems.length - 1 ? 'last-item' : ''}`}>
                   {item.text}
                 </li>
               </a>
