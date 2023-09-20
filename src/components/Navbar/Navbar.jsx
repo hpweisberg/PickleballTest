@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/20/solid';
 
 const Navbar = ({ handleShowNav, showNav }) => {
@@ -21,38 +21,43 @@ const Navbar = ({ handleShowNav, showNav }) => {
   ];
 
   return (
-    <nav className={`nav flex flex-col items-end px-4 bg-slate-200 h-[100vh] absolute ${showNav ? 'open' : ''}`
-    }
-      style={{ zIndex: 1000 }}
-    >
+    <div className='fixed top-0 left-0 w-20 z-10 '>
+      <button
+        onClick={handleShowNav}
+        className='p-6 transform transition-transform duration-300 ease-in-out'
+      >
+        <Bars3Icon className='w-10 h-10' />
+      </button>
+      <nav className={`nav flex flex-col items-end px-4 bg-slate-200 h-[100vh] fixed top-0 left-0 ${showNav ? 'open' : ''}`
+      }
+        style={{ zIndex: 1000 }}
+      >
 
-      <div className='flex items-start justify-start'>
-        <button
-          onClick={handleShowNav}
-          className='p-2 transform transition-transform duration-300 ease-in-out'
-          // style={{
-          //   transform: showNav ? 'rotate(90deg)' : 'rotate(0deg)',
-          // }}
-        >
-          {showNav ? (
-            <XMarkIcon className='w-6 h-6' />
-          ) : (
-            <XMarkIcon className='w-6 h-6' />
-          )}
-        </button>
-      </div>
-      <div className={`nav-items z-10 ${showNav ? 'open' : ''}`}>
-        <ul className='flex flex-col'>
-          {navItems.map((item, index) => (
-            <a href={item.link} key={index} target="_blank" rel="noopener noreferrer">
-              <li className='nav-item'>
-                {item.text}
-              </li>
-            </a>
-          ))}
-        </ul>
-      </div>
-    </nav>
+        <div className='flex items-start justify-start '>
+          <button
+            onClick={handleShowNav}
+            className='m-4 transform transition-transform duration-300 ease-in-out'
+          >
+            {showNav ? (
+              <XMarkIcon className='w-8 h-8' />
+            ) : (
+              <XMarkIcon className='w-8 h-8' />
+            )}
+          </button>
+        </div>
+        <div className={`nav-items z-10  ${showNav ? 'open' : ''} overflow-y-auto`}>
+          <ul className='flex flex-col'>
+            {navItems.map((item, index) => (
+              <a href={item.link} key={index} target="_blank" rel="noopener noreferrer">
+                <li className='nav-item'>
+                  {item.text}
+                </li>
+              </a>
+            ))}
+          </ul>
+        </div>
+      </nav>
+    </div>
   );
 };
 

@@ -16,7 +16,7 @@ function App() {
 
   return (
     <>
-      <div className='flex'>
+      <div className='flex h-full'>
         <Navbar handleShowNav={handleShowNav} showNav={showNav} />
         <section className='w-full'>
 
